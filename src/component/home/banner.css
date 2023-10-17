@@ -1,0 +1,23 @@
+.Banner{
+    text-align: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+.container-style{
+    height: 100%;
+    position: relative;
+}
+.carousel-bullet{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.carousel-bullet span{
+    width: 40px;
+    height: 10px;
+    background-color: cyan;
+    margin-left: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 3px 2px 2px cornsilk;
+}
