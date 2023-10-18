@@ -9,6 +9,9 @@ import ErrorPage from "./component/error/ErrorPage";
 import SignIn from "./component/signIn&up/SignIn";
 import SignUp from "./component/signIn&up/SignUp";
 import AuthProvider from "./component/AuthProvider/AuthProvider";
+import Product from "./component/product/Product";
+import Private from "./component/AuthProvider/Private";
+import AddProduct from "./component/product/AddProduct";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +30,23 @@ const router = createBrowserRouter([
       {
         path: "/signUp",
         element: <SignUp></SignUp>,
+      },
+      {
+        path: "/Product/:brand_name",
+        element: (
+          <Private>
+            <Product></Product>
+          </Private>
+        ),
+        loader: () => fetch("http://localhost:5000/products"),
+      },
+      {
+        path: "/addProduct",
+        element: (
+          <Private>
+            <AddProduct></AddProduct>
+          </Private>
+        ),
       },
     ],
   },

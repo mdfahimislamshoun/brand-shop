@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const BrandCard = ({ brand }) => {
-  const { img, brand_name} = brand;
+  const { id,img, brand_name} = brand;
   return (
     <div>
       <div className="card w-80 h-80 bg-base-100 shadow-xl">
@@ -16,8 +16,8 @@ const BrandCard = ({ brand }) => {
           <h2 className="card-title">{brand_name}</h2>
            
         </div>
-        <Link to='/'></Link>
-        <button className="btn btn-primary">Buy Now</button>
+        <Link to={`/product/${brand_name}`}>
+        <button className="btn btn-primary w-full">Buy Now</button></Link>
       </div>
     </div>
   );

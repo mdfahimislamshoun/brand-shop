@@ -11,8 +11,8 @@ const Navbar = () => {
       .then(() => console.log("user logOut "))
       .catch((error) => console.log(error));
   };
-    return (
-      <div className="container  flex w-[100%] mx-auto">
+  return (
+    <div className="container  flex w-[100%] mx-auto">
       <div className=" navbar  md:flex lg:flex items-center justify-center  min-h-16 w-[100%]  bg-base-100">
         <div className="navbar-start items-center">
           <img className="text-xl h-20 " src="" alt="" />
@@ -23,27 +23,24 @@ const Navbar = () => {
               <NavLink to="/">Home</NavLink>
             </li>
             <li>
-            <NavLink to="/about">AboutUs</NavLink>
+              <NavLink to="/about">AboutUs</NavLink>
             </li>
             <li>
-              {
-                user?"":<NavLink to="/signIn">SignIn</NavLink>
-              }
+              {user ? <NavLink to="/addProduct">AddProduct</NavLink> : ""}
             </li>
+            <li>{user ? "" : <NavLink to="/signIn">SignIn</NavLink>}</li>
+            <li>{user ? "" : <NavLink to="/signUp">SignUp</NavLink>}</li>
             <li>
-              {
-                user?"":<NavLink to="/signUp">SignUp</NavLink>
-              }
-            </li>
-            <li>
-              {user && <button onClick={handleSignOut} className="btn ">
-                SignOut
-              </button>}
+              {user && (
+                <button onClick={handleSignOut} className="btn ">
+                  SignOut
+                </button>
+              )}
             </li>
             <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
-                <img src={user? user.photoURL:""} />
+                  <img src={user ? user.photoURL : ""} />
                 </div>
               </label>
             </div>
@@ -74,30 +71,24 @@ const Navbar = () => {
               <NavLink to="/">Home</NavLink>
             </li>
             <li>
-            <NavLink to="/about">About</NavLink>
+              <NavLink to="/about">AboutUs</NavLink>
             </li>
             <li>
-              {
-                user?"":<NavLink to="/signIn">SignIn</NavLink>
-              }
+              {user ? <NavLink to="/addProduct">AddProduct</NavLink> : ""}
             </li>
+            <li>{user ? "" : <NavLink to="/signIn">SignIn</NavLink>}</li>
+            <li>{user ? "" : <NavLink to="/signUp">SignUp</NavLink>}</li>
             <li>
-              {
-                user?"":<NavLink to="/signUp">SignUp</NavLink>
-              }
-            </li>
-            <li>
-              {user && <button onClick={handleSignOut} className="btn ">
-                SignOut
-              </button>}
+              {user && (
+                <button onClick={handleSignOut} className="btn ">
+                  SignOut
+                </button>
+              )}
             </li>
             <div className="dropdown dropdown-end">
-              <label
-                tabIndex={0}
-                className="btn btn-ghost btn-circle avatar"
-              >
+              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
-                <img src={user? user.photoURL:""} />
+                  <img src={user ? user.photoURL : ""} />
                 </div>
               </label>
             </div>
@@ -105,7 +96,7 @@ const Navbar = () => {
         </div>
       </div>
     </div>
-    );
+  );
 };
 
 export default Navbar;

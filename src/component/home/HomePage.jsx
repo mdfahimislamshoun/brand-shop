@@ -5,7 +5,7 @@ import BrandCard from "./BrandCard";
 
 const HomePage = () => {
     const[brands,setBrands]=useState([]);
-   
+   console.log(brands)
     useEffect(()=>{
 fetch('brand.json')
 .then(res=>res.json())
