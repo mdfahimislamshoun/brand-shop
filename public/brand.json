@@ -1,0 +1,33 @@
+[
+    {
+      "brand_name": "Nike",
+      "img": "https://i.ibb.co/gJtJR63/peter-albanese-Gqlmzo-q6m-Y-unsplash.jpg",
+      "description": "Nike is a multinational corporation specializing in sports footwear, apparel, and equipment. It is one of the world's largest suppliers of athletic shoes and apparel."
+    },
+    {
+      "brand_name": "Adidas",
+      "img": "https://i.ibb.co/x355gJj/chuttersnap-z-Ma-QFh-0aj-A-unsplash.jpg",
+      "description": "Adidas is a German multinational corporation that designs and manufactures sports and casual clothing, footwear, and accessories. It is one of the largest sportswear manufacturers in the world."
+    },
+    {
+      "brand_name": "Gucci",
+      "img": "https://i.ibb.co/3N7D6jn/james-ree-Zme-Ftu11-Hpc-unsplash.jpg",
+      "description": "Gucci is an Italian luxury brand of fashion and leather goods. It is known for its high-quality products and iconic design elements."
+    },
+    {
+      "brand_name": "Zara",
+      "img": "https://i.ibb.co/kHMwgzn/Zara-logo-PNG3.png",
+      "description": "Zara is a Spanish fast fashion retailer that offers trendy clothing, accessories, and footwear for men, women, and children."
+    },
+    {
+      "brand_name": "H&M",
+      "img": "https://i.ibb.co/CVZrR0D/sei-h-A-Znk-S2-Nwc-unsplash.jpg",
+      "description": "H&M is a Swedish multinational clothing retailer known for its affordable and stylish clothing and accessories for the whole family."
+    },
+    {
+      "brand_name": "Levi's",
+      "img": "https://i.ibb.co/M23RvLM/levis-logo-PNG1.png",
+      "description": "Levi's is an American clothing company famous for its denim jeans and other clothing products. It is one of the most recognized denim brands worldwide."
+    }
+  ]
+  

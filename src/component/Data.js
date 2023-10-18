@@ -10,12 +10,12 @@ const Sliders=[
   "body": "Witness the grandeur of this enormous seal as it gracefully glides through the frigid waters of the Arctic. Its sheer size and power are truly remarkable."
 },
 {"id":"3",
-  "image": "https://i.ibb.co/WVJF508/istockphoto-1193802723-612x612.jpg",
+  "image": "https://i.ibb.co/x355gJj/chuttersnap-z-Ma-QFh-0aj-A-unsplash.jpg",
   "title": "Big Seal Family Gathering",
   "body": "A heartwarming scene unfolds as a big seal family congregates on the ice floes. The parent seals protectively watch over their adorable seal pups, creating an endearing spectacle."
 },
 {"id":"4",
-  "image": "https://i.ibb.co/m8Ctkrc/stylish-adult-woman-holding-shopping-bags-with-copy-space.jpg",
+  "image": "https://i.ibb.co/gJtJR63/peter-albanese-Gqlmzo-q6m-Y-unsplash.jpg",
   "title": "Big Seal's Playful Antics",
   "body": "Prepare to be amused by the playful antics of this large seal as it frolics in the water. Its acrobatic moves and spirited nature are sure to bring a smile to your face."
 }
