@@ -28,6 +28,9 @@ const Navbar = () => {
             <li>
               {user ? <NavLink to="/addProduct">AddProduct</NavLink> : ""}
             </li>
+            <li>
+              {user ? <NavLink to="/myCard">MyCard</NavLink> : ""}
+            </li>
             <li>{user ? "" : <NavLink to="/signIn">SignIn</NavLink>}</li>
             <li>{user ? "" : <NavLink to="/signUp">SignUp</NavLink>}</li>
             <li>
@@ -75,6 +78,9 @@ const Navbar = () => {
             </li>
             <li>
               {user ? <NavLink to="/addProduct">AddProduct</NavLink> : ""}
+            </li>
+            <li>
+              {user ? <NavLink to="/myCard">MyCard</NavLink> : ""}
             </li>
             <li>{user ? "" : <NavLink to="/signIn">SignIn</NavLink>}</li>
             <li>{user ? "" : <NavLink to="/signUp">SignUp</NavLink>}</li>

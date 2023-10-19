@@ -1,11 +1,34 @@
 
 import { AiFillEdit, AiFillFolderAdd } from "react-icons/ai";
 import { Link, useLoaderData, useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Details = () => {
   const products = useLoaderData([]);
   console.log(products)
   const{_id, brand_name, name, price, title, rating, image }=products;
+
+  const handleAddCard=(products)=>{
+console.log(products)
+    fetch("http://localhost:5000/cards", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(products),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          return Swal.fire(
+            "Good job!",
+            "You add this product successfully!",
+            "success"
+          );
+        }
+      });
+  }
   
   return (
     <div>
@@ -20,6 +43,7 @@ const Details = () => {
             <h1 className="text-xl font-bold">Brand Name: {brand_name}</h1>
             <h2 className="text-xl font-semibold">Name: {name}</h2>
             <h3 className="text-base font-medium">Title:{title}</h3>
+            <h3 className="text-base font-medium">{price}</h3>
             <p>
               {rating ? (
                 <div className="rating">
@@ -62,7 +86,7 @@ const Details = () => {
                   <AiFillEdit></AiFillEdit>
                 </button>
               </Link>
-              <button className="btn text-xl text-white">
+              <button onClick={()=>handleAddCard(products)} className="btn text-xl text-white">
                 <AiFillFolderAdd></AiFillFolderAdd>
               </button>
             </div>

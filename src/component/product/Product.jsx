@@ -5,7 +5,8 @@ import Products from "./Products";
 
 const Product = () => {
   // const[existProduct,setExistProduct]=useState([])
-  const products = useLoaderData();
+  const products = useLoaderData([]);
+
   const { brand_name } = useParams();
   //   const idInt = parseInt(id);
   const product = products.filter((products) => products.brand_name === brand_name);

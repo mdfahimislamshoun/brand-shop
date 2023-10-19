@@ -14,6 +14,7 @@ import Private from "./component/AuthProvider/Private";
 import AddProduct from "./component/product/AddProduct";
 import EditProduct from "./component/product/EditeProduct";
 import Details from "./component/product/Details";
+import MyCard from "./component/myCard/MyCard";
 
 const router = createBrowserRouter([
   {
@@ -63,6 +64,11 @@ const router = createBrowserRouter([
         path: "/details/:id",
         element:<Private><Details></Details></Private>,
         loader: ({params}) => fetch(`http://localhost:5000/products/${params.id}`),
+      },
+      {
+        path:'/myCard',
+        element:<Private><MyCard></MyCard></Private>,
+        loader: () => fetch("http://localhost:5000/cards"),
       }
     ],
   },
