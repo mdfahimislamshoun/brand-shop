@@ -1,21 +1,38 @@
 
+import { useContext } from "react";
 import { AiFillEdit, AiFillFolderAdd } from "react-icons/ai";
-import { Link, useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const Details = () => {
   const products = useLoaderData([]);
+const  {user} = useContext(AuthContext);
+const  mail=user.email
+  
   console.log(products)
   const{_id, brand_name, name, price, title, rating, image }=products;
 
-  const handleAddCard=(products)=>{
-console.log(products)
+
+  const handleAddCard=()=>{
+
+const brand=brand_name;
+const product_name=name;
+const Product_price=price;
+const product_title=title;
+const Product_rating=rating;
+const product_image=image;
+const email=mail
+const productData={brand,product_name,Product_price,product_title,
+  Product_rating,product_image,email}
+
+
     fetch("http://localhost:5000/cards", {
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(products),
+      body: JSON.stringify(productData),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -86,7 +103,7 @@ console.log(products)
                   <AiFillEdit></AiFillEdit>
                 </button>
               </Link>
-              <button onClick={()=>handleAddCard(products)} className="btn text-xl text-white">
+              <button onClick={handleAddCard} className="btn text-xl text-white">
                 <AiFillFolderAdd></AiFillFolderAdd>
               </button>
             </div>

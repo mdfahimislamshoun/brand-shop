@@ -1,29 +1,30 @@
-import { useEffect } from "react";
-import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import Cards from "./Cards";
-
+import { useState } from "react";
+import { useContext } from "react";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const MyCard = () => {
-   const[myCards,setMyCards]=useState([]);
+  const { user } = useContext(AuthContext);
+  const email = user.email;
+  const myCards = useLoaderData([]);
+  const usersCard = myCards.filter((myCards) => myCards.email === email);
+  const [existCard, setExistCard] = useState(usersCard);
 
-   useEffect(()=>{
-fetch('http://localhost:5000/cards')
-.then(res=>res.json())
-.then(data=>{
-    console.log(data)
-    setMyCards(data)
-})
-   },[])
-    return (
-        <div>
-            <div className="container w-[95%] justify-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-auto">
-                {
-                  myCards.map(myCard=> <Cards key={myCard._id} myCard={myCard}></Cards>)  
-                }
-            </div>
-        </div>
-    );
+  return (
+    <div>
+      <div className="container w-[95%] justify-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-auto">
+        {existCard.map((myCard) => (
+          <Cards
+            key={myCard._id}
+            myCard={myCard}
+            existCard={existCard}
+            setExistCard={setExistCard}
+          ></Cards>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default MyCard;
