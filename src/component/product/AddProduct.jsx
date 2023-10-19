@@ -6,10 +6,12 @@ const AddProduct = () => {
     event.preventDefault();
     const form = event.target;
     const brand_name = form.brand.value;
+    const name = form.name.value;
     const price = form.price.value;
     const title=form.title.value
+    const rating=form.rating.value
     const image = form.image.value;
-    const productData = { brand_name, price,title,image };
+    const productData = { brand_name,name, price,title,rating,image };
     console.log(productData);
     fetch("http://localhost:5000/products", {
       method: "POST",
@@ -34,7 +36,7 @@ const AddProduct = () => {
     <div className="container w-[95%] justify-center mx-auto">
       <form onSubmit={handleProductData}>
         <div className="flex">
-          <div className="form-control  md:w-1/2 ">
+          <div className="form-control  md:w-1/3 ">
             <label className="label">
               <span className="label-text">Brand Name</span>
             </label>
@@ -45,7 +47,19 @@ const AddProduct = () => {
               className="input input-bordered border border-x-fuchsia-100 w-full"
             />
           </div>
-          <div className="form-control md:w-1/2 ml-4 ">
+          <div className="form-control  md:w-1/3  ml-3">
+            <label className="label">
+              <span className="label-text"> Name</span>
+            </label>
+            <input
+              type="text"
+              name="name"
+              placeholder="Product name"
+              className="input input-bordered border border-x-fuchsia-100 w-full"
+            />
+          </div>
+          
+          <div className="form-control md:w-1/3 ml-3 ">
             <label className="label">
               <span className="label-text">Price</span>
             </label>
@@ -58,14 +72,25 @@ const AddProduct = () => {
           </div>
         </div>
         <div className="flex">
-          <div className="form-control  md:w-full ">
+          <div className="form-control  md:w-2/3 ">
             <label className="label">
-              <span className="label-text">Title</span>
+              <span className="label-text">Description</span>
             </label>
             <input
               type="text"
               name="title"
               placeholder="Enter product title hear"
+              className="input input-bordered border border-x-fuchsia-100 w-full"
+            />
+          </div>
+          <div className="form-control  md:w-1/3 ml-3">
+            <label className="label">
+              <span className="label-text">Rating</span>
+            </label>
+            <input
+              type="number"
+              name="rating"
+              placeholder="Give a rating hear"
               className="input input-bordered border border-x-fuchsia-100 w-full"
             />
           </div>

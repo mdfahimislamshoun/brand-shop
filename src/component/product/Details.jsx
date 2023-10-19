@@ -1,0 +1,76 @@
+
+import { AiFillEdit, AiFillFolderAdd } from "react-icons/ai";
+import { Link, useLoaderData, useParams } from "react-router-dom";
+
+const Details = () => {
+  const products = useLoaderData([]);
+  console.log(products)
+  const{_id, brand_name, name, price, title, rating, image }=products;
+  
+  return (
+    <div>
+      <div className="container w-[95%] mx-auto">
+        <div className="card card-side  bg-base-100 shadow-xl flex  justify-between items-center">
+          <div>
+            <figure>
+              <img src={image} alt="image" className="w-72 h-52" />
+            </figure>
+          </div>
+          <div>
+            <h1 className="text-xl font-bold">Brand Name: {brand_name}</h1>
+            <h2 className="text-xl font-semibold">Name: {name}</h2>
+            <h3 className="text-base font-medium">Title:{title}</h3>
+            <p>
+              {rating ? (
+                <div className="rating">
+                  <input
+                    type="radio"
+                    name="rating-2"
+                    className="mask mask-star-2 bg-orange-400"
+                  />
+                  <input
+                    type="radio"
+                    name="rating-2"
+                    className="mask mask-star-2 bg-orange-400"
+                  />
+                  <input
+                    type="radio"
+                    name="rating-2"
+                    className="mask mask-star-2 bg-orange-400"
+                  />
+                  <input
+                    type="radio"
+                    name="rating-2"
+                    className="mask mask-star-2 bg-orange-400"
+                    checked
+                  />
+                  <input
+                    type="radio"
+                    name="rating-2"
+                    className="mask mask-star-2 bg-orange-400"
+                  />
+                </div>
+              ) : (
+                ""
+              )}
+            </p>
+          </div>
+          <div className="">
+            <div className="btn-group btn-group-vertical space-y-4">
+              <Link to={`/edit/${_id}`}>
+                <button className="btn text-xl text-white">
+                  <AiFillEdit></AiFillEdit>
+                </button>
+              </Link>
+              <button className="btn text-xl text-white">
+                <AiFillFolderAdd></AiFillFolderAdd>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Details;

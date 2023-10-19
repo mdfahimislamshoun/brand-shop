@@ -12,6 +12,8 @@ import AuthProvider from "./component/AuthProvider/AuthProvider";
 import Product from "./component/product/Product";
 import Private from "./component/AuthProvider/Private";
 import AddProduct from "./component/product/AddProduct";
+import EditProduct from "./component/product/EditeProduct";
+import Details from "./component/product/Details";
 
 const router = createBrowserRouter([
   {
@@ -48,6 +50,20 @@ const router = createBrowserRouter([
           </Private>
         ),
       },
+      {
+        path: "/edit/:id",
+        element: (
+          <Private>
+            <EditProduct></EditProduct>
+          </Private>  
+        ),
+       loader: ({params}) => fetch(`http://localhost:5000/products/${params.id}`),
+      },
+      {
+        path: "/details/:id",
+        element:<Private><Details></Details></Private>,
+        loader: ({params}) => fetch(`http://localhost:5000/products/${params.id}`),
+      }
     ],
   },
 ]);

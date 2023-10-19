@@ -4,6 +4,7 @@ const BrandCard = ({ brand }) => {
   const { id,img, brand_name} = brand;
   return (
     <div>
+       <Link to={`/product/${brand_name}`}>
       <div className="card w-80 h-80 bg-base-100 shadow-xl">
         <figure >
           <img 
@@ -16,9 +17,8 @@ const BrandCard = ({ brand }) => {
           <h2 className="card-title">{brand_name}</h2>
            
         </div>
-        <Link to={`/product/${brand_name}`}>
-        <button className="btn btn-primary w-full">Buy Now</button></Link>
       </div>
+      </Link>
     </div>
   );
 };
