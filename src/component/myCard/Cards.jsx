@@ -1,5 +1,8 @@
+/* eslint-disable react/prop-types */
 import Swal from "sweetalert2";
-
+import { Rating } from '@smastrom/react-rating'
+import '@smastrom/react-rating/style.css'
+// eslint-disable-next-line react/prop-types
 const Cards = ({ myCard, existCard, setExistCard }) => {
   const {
     brand,
@@ -9,7 +12,7 @@ const Cards = ({ myCard, existCard, setExistCard }) => {
     product_title,
     Product_rating,
     product_image,
-    email
+    email,
   } = myCard;
   const removeCard = (_id) => {
     const swalWithBootstrapButtons = Swal.mixin({
@@ -44,9 +47,8 @@ const Cards = ({ myCard, existCard, setExistCard }) => {
                   "Your coffee has been deleted.",
                   "success"
                 );
-                 const remaining = existCard.filter((card) => card._id !== _id);
-                  setExistCard(remaining)
-                
+                const remaining = existCard.filter((card) => card._id !== _id);
+                setExistCard(remaining);
               }
             });
         } else if (
@@ -78,38 +80,15 @@ const Cards = ({ myCard, existCard, setExistCard }) => {
           <p>{product_title}</p>
           <p>{Product_price}</p>
           <p>
-            {Product_rating ? (
-              <div className="rating">
-                <input
-                  type="radio"
-                  name="rating-2"
-                  className="mask mask-star-2 bg-orange-400"
-                />
-                <input
-                  type="radio"
-                  name="rating-2"
-                  className="mask mask-star-2 bg-orange-400"
-                />
-                <input
-                  type="radio"
-                  name="rating-2"
-                  className="mask mask-star-2 bg-orange-400"
-                />
-                <input
-                  type="radio"
-                  name="rating-2"
-                  className="mask mask-star-2 bg-orange-400"
-                  checked
-                />
-                <input
-                  type="radio"
-                  name="rating-2"
-                  className="mask mask-star-2 bg-orange-400"
-                />
-              </div>
-            ) : (
-              ""
-            )}
+            <span>{Product_rating}</span>
+            <span>
+              <Rating
+                style={{ maxWidth: 100 }}
+                readOnly
+                halfFillMode="svg"
+                value={Product_rating < 4.5 ? Math.floor(Product_rating) : Product_rating}
+              />
+            </span>
           </p>
         </div>
         <button onClick={() => removeCard(_id)} className="btn btn-primary">

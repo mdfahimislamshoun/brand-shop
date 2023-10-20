@@ -128,7 +128,7 @@ const SignIn = () => {
                   </button>
                 </div>
               </form>
-              <h2 className="text-center">Or</h2>
+              <div className="divider text-black">OR</div>
               <div className="flex gap-2 items-center justify-center">
                 <button onClick={handelWithGoogle}>
                   {" "}

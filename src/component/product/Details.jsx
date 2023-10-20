@@ -4,6 +4,8 @@ import { AiFillEdit, AiFillFolderAdd } from "react-icons/ai";
 import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import { Rating } from '@smastrom/react-rating'
+import '@smastrom/react-rating/style.css'
 
 const Details = () => {
   const products = useLoaderData([]);
@@ -49,8 +51,8 @@ const productData={brand,product_name,Product_price,product_title,
   
   return (
     <div>
-      <div className="container w-[95%] mx-auto">
-        <div className="card card-side  bg-base-100 shadow-xl flex  justify-between items-center">
+      <div className="container w-[95%]  h-screen mx-auto">
+        <div className="card card-side h-56  bg-base-100 shadow-xl flex  justify-between items-center">
           <div>
             <figure>
               <img src={image} alt="image" className="w-72 h-52" />
@@ -62,48 +64,25 @@ const productData={brand,product_name,Product_price,product_title,
             <h3 className="text-base font-medium">Title:{title}</h3>
             <h3 className="text-base font-medium">{price}</h3>
             <p>
-              {rating ? (
-                <div className="rating">
-                  <input
-                    type="radio"
-                    name="rating-2"
-                    className="mask mask-star-2 bg-orange-400"
-                  />
-                  <input
-                    type="radio"
-                    name="rating-2"
-                    className="mask mask-star-2 bg-orange-400"
-                  />
-                  <input
-                    type="radio"
-                    name="rating-2"
-                    className="mask mask-star-2 bg-orange-400"
-                  />
-                  <input
-                    type="radio"
-                    name="rating-2"
-                    className="mask mask-star-2 bg-orange-400"
-                    checked
-                  />
-                  <input
-                    type="radio"
-                    name="rating-2"
-                    className="mask mask-star-2 bg-orange-400"
-                  />
-                </div>
-              ) : (
-                ""
-              )}
-            </p>
+            <span>{rating}</span>
+            <span>
+              <Rating
+                style={{ maxWidth: 100 }}
+                readOnly
+                halfFillMode="svg"
+                value={rating < 4.5 ? Math.floor(rating) : rating}
+              />
+            </span>
+          </p>
           </div>
           <div className="">
             <div className="btn-group btn-group-vertical space-y-4">
               <Link to={`/edit/${_id}`}>
-                <button className="btn text-xl text-white">
+                <button className="btn text-xl text-gray-600">
                   <AiFillEdit></AiFillEdit>
                 </button>
               </Link>
-              <button onClick={handleAddCard} className="btn text-xl text-white">
+              <button onClick={handleAddCard} className="btn text-xl text-gray-600">
                 <AiFillFolderAdd></AiFillFolderAdd>
               </button>
             </div>

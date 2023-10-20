@@ -33,7 +33,7 @@ const AddProduct = () => {
       });
   };
   return (
-    <div className="container w-[95%] justify-center mx-auto">
+    <div className="container w-[95%]  h-screen justify-center mx-auto">
       <form onSubmit={handleProductData}>
         <div className="flex">
           <div className="form-control  md:w-1/3 ">

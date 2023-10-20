@@ -15,6 +15,7 @@ import AddProduct from "./component/product/AddProduct";
 import EditProduct from "./component/product/EditeProduct";
 import Details from "./component/product/Details";
 import MyCard from "./component/myCard/MyCard";
+import Deliver from "./component/delivers/Deliver";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <HomePage></HomePage>,
+        loader:()=>fetch('http://localhost:5000/testimonials')
       },
       {
         path: "/signIn",
@@ -69,7 +71,7 @@ const router = createBrowserRouter([
         path:'/myCard',
         element:<Private><MyCard></MyCard></Private>,
         loader: () => fetch("http://localhost:5000/cards"),
-      }
+      },
     ],
   },
 ]);
