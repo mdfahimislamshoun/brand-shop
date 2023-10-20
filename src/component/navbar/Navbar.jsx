@@ -36,7 +36,7 @@ const Navbar = () => {
     <div className="container  flex w-[100%] mx-auto">
       <div className=" navbar  md:flex lg:flex items-center justify-center  min-h-16 w-[100%]  bg-base-100">
         <div className="navbar-start items-center">
-          <img className="text-xl h-20 " src="" alt="" />
+          <img className="text-xl h-20 " src="https://i.ibb.co/7YV5T2M/fs.png" alt="" />
         </div>
         <div className="navbar-end  hidden md:flex ">
           <ul className="flex items-center ">
