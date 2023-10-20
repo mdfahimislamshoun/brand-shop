@@ -6,10 +6,9 @@ const Deliver = () => {
     const[delivers,setDelivers]=useState([])
 
     useEffect(()=>{
-        fetch('http://localhost:5000/delivers')
+        fetch('https://ten-9c1ccruaj-fahim-s-projects.vercel.app/delivers')
         .then(res=>res.json())
         .then(data=>{
-            console.log(data)
             setDelivers(data)
         })
     },[])

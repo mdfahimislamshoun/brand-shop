@@ -12,7 +12,7 @@ const MyCard = () => {
   const [existCard, setExistCard] = useState(usersCard);
 
   return (
-    <div>
+    <div className="mt-10">
       <div className="container w-[95%] justify-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-auto">
         {existCard.map((myCard) => (
           <Cards

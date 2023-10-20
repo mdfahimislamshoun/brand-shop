@@ -35,7 +35,7 @@ const Cards = ({ myCard, existCard, setExistCard }) => {
       })
       .then((result) => {
         if (result.isConfirmed) {
-          fetch(`http://localhost:5000/cards/${_id}`, {
+          fetch(`https://ten-9c1ccruaj-fahim-s-projects.vercel.app/cards/${_id}`, {
             method: "DELETE",
           })
             .then((res) => res.json())
@@ -65,8 +65,8 @@ const Cards = ({ myCard, existCard, setExistCard }) => {
   };
 
   return (
-    <div>
-      <div className="card w-96 h-[500px] bg-base-100 shadow-xl">
+    <div >
+      <div className="card w-96 h-[500px] bg-base-100 shadow-xl mt-20 mb-20">
         <figure className="">
           <img
             src={product_image}

@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 
 const BrandCard = ({ brand }) => {
-  const { id,img, brand_name} = brand;
+  const { img, brand_name} = brand;
   return (
     <div>
        <Link to={`/product/${brand_name}`}>

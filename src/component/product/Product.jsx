@@ -12,10 +12,10 @@ const Product = () => {
   const product = products.filter((products) => products.brand_name === brand_name);
   
   return (
-    <div>
+    <div >
       <ProductBanner></ProductBanner>
       <div className=" container w-[95%] justify-center
-            grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10  mx-auto">
+            grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-8  mx-auto mt-20 ">
         {
           product.map(p=><Products key={p._id} p={p}></Products>)
         }

@@ -17,7 +17,6 @@ import Details from "./component/product/Details";
 import MyCard from "./component/myCard/MyCard";
 import About from "./component/delivers/About";
 
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -27,11 +26,14 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <HomePage></HomePage>,
-        loader:()=>fetch('http://localhost:5000/testimonials')
+        loader: () =>
+          fetch(
+            "https://ten-9c1ccruaj-fahim-s-projects.vercel.app/testimonials"
+          ),
       },
       {
-path:'/about',
-element:<About></About>,
+        path: "/about",
+        element: <About></About>,
       },
       {
         path: "/signIn",
@@ -48,7 +50,8 @@ element:<About></About>,
             <Product></Product>
           </Private>
         ),
-        loader: () => fetch("http://localhost:5000/products"),
+        loader: () =>
+          fetch("https://ten-9c1ccruaj-fahim-s-projects.vercel.app/products"),
       },
       {
         path: "/addProduct",
@@ -63,19 +66,34 @@ element:<About></About>,
         element: (
           <Private>
             <EditProduct></EditProduct>
-          </Private>  
+          </Private>
         ),
-       loader: ({params}) => fetch(`http://localhost:5000/products/${params.id}`),
+        loader: ({ params }) =>
+          fetch(
+            `https://ten-9c1ccruaj-fahim-s-projects.vercel.app/products/${params.id}`
+          ),
       },
       {
         path: "/details/:id",
-        element:<Private><Details></Details></Private>,
-        loader: ({params}) => fetch(`http://localhost:5000/products/${params.id}`),
+        element: (
+          <Private>
+            <Details></Details>
+          </Private>
+        ),
+        loader: ({ params }) =>
+          fetch(
+            `https://ten-9c1ccruaj-fahim-s-projects.vercel.app/products/${params.id}`
+          ),
       },
       {
-        path:'/myCard',
-        element:<Private><MyCard></MyCard></Private>,
-        loader: () => fetch("http://localhost:5000/cards"),
+        path: "/myCard",
+        element: (
+          <Private>
+            <MyCard></MyCard>
+          </Private>
+        ),
+        loader: () =>
+          fetch("https://ten-9c1ccruaj-fahim-s-projects.vercel.app/cards"),
       },
     ],
   },

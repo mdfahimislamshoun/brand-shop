@@ -13,7 +13,7 @@ const AddProduct = () => {
     const image = form.image.value;
     const productData = { brand_name,name, price,title,rating,image };
     console.log(productData);
-    fetch("http://localhost:5000/products", {
+    fetch("https://ten-9c1ccruaj-fahim-s-projects.vercel.app/products", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -33,7 +33,7 @@ const AddProduct = () => {
       });
   };
   return (
-    <div className="container w-[95%]  h-screen justify-center mx-auto">
+    <div className="container w-[95%]  h-screen justify-center mx-auto mt-20">
       <form onSubmit={handleProductData}>
         <div className="flex">
           <div className="form-control  md:w-1/3 ">

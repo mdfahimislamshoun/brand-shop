@@ -29,7 +29,7 @@ const productData={brand,product_name,Product_price,product_title,
   Product_rating,product_image,email}
 
 
-    fetch("http://localhost:5000/cards", {
+    fetch("https://ten-9c1ccruaj-fahim-s-projects.vercel.app/cards", {
       method: "POST",
       headers: {
         "content-type": "application/json",

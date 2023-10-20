@@ -17,7 +17,7 @@ const EditProduct = () => {
     const image = form.image.value;
     const UpdateData = { brand_name, name, price, title, rating, image };
     console.log(UpdateData);
-    fetch(`http://localhost:5000/products/${_id}`, {
+    fetch(`https://ten-9c1ccruaj-fahim-s-projects.vercel.app/products/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -45,7 +45,7 @@ const EditProduct = () => {
       });
   };
   return (
-    <div className="container w-[95%] h-screen justify-center mx-auto">
+    <div className="container w-[95%] h-screen justify-center mx-auto mt-20">
       <form onSubmit={handleUpdateData }>
         <div className="flex">
           <div className="form-control  md:w-1/3 ">
