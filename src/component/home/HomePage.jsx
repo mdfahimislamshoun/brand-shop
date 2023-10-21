@@ -6,13 +6,12 @@ import "./home.css";
 import {
   Navigation,
   Pagination,
-  Scrollbar,
-  A11y,
   Autoplay,
 } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-// Import Swiper styles
+// Import Swiper style
+
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -47,14 +46,14 @@ const HomePage = () => {
         ))}
       </div>
 
-      <div className="container h-[420px] mt-20 justify-center mx-auto ">
+      <div className="container  mt-20 justify-center mx-auto ">
         <div className="mb-20">
           <h1 className="text-2xl font-black text-center">CUSTOMER SAY</h1>
           <h2 className="text-3xl font-semibold text-center">
             Happy customer words
           </h2>
         </div>
-        <div className=" container w-[] mx-auto justify-center">
+        <div className=" container  mx-auto justify-center">
           <Swiper
             modules={[Navigation, Pagination, Autoplay]}
             spaceBetween={100}
