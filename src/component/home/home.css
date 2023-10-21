@@ -1,0 +1,29 @@
+.client-review::before {
+  content: "";
+  position: absolute;
+  bottom: -4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 2rem solid #ced3ff;
+  border-color: transparent;
+  border-top-color:#ced3ff ;
+}
+
+.client-review p::before {
+  content: "\f10d ";
+  position: absolute;
+  top:2;
+  left:5px;
+  color: #ced3ff;
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+}
+.client-review p::after {
+  content: "\f10e ";
+  position: absolute;
+  bottom:-1;
+  right:4rem;
+  color: #ced3ff;
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+}

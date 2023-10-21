@@ -2,6 +2,7 @@ import { useState } from "react";
 import Banner from "./Banner";
 import { useEffect } from "react";
 import BrandCard from "./BrandCard";
+import "./home.css";
 import {
   Navigation,
   Pagination,
@@ -46,41 +47,39 @@ const HomePage = () => {
         ))}
       </div>
 
-      <div className="container h-[600px] mt-20 justify-center mx-auto">
+      <div className="container h-[420px] mt-20 justify-center mx-auto ">
         <div className="mb-20">
           <h1 className="text-2xl font-black text-center">CUSTOMER SAY</h1>
           <h2 className="text-3xl font-semibold text-center">
-          Happy customer words
+            Happy customer words
           </h2>
         </div>
         <div className=" container w-[] mx-auto justify-center">
           <Swiper
-            // install Swiper modules
-            modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
-            spaceBetween={150}
+            modules={[Navigation, Pagination, Autoplay]}
+            spaceBetween={100}
             slidesPerView={2}
             autoplay={true}
             navigation
             pagination={{ clickable: true }}
-            // scrollbar={{ draggable: true }}
-            // onSwiper={(swiper) => console.log(swiper)}
-            // onSlideChange={() => console.log("slide change")}
           >
             {testimonials.map((testimon) => (
               <SwiperSlide key={testimon._id}>
-                <div className="card w-96 h-[450px]  justify-center">
-                  <div className="card-body">
-                    <div className="">
-                      <h2 className="card-title">{testimon.name}</h2>
-                      <p>{testimon.occupation}</p>
-                      <p>{testimon.review}</p>
-                    </div>
-                    <img
-                      className=" rounded-full w-40 h-40 justify-center mx-auto mt-10"
-                      src={testimon.image}
-                      alt="image"
-                    />
+                <div className="container flex flex-col items-center ">
+                  <div className="container p-8 relative client-review shadow-xl rounded-xl">
+                  <p>{testimon.review}</p>
                   </div>
+                  <div className=" flex items-center gap-10 mt-6">
+                    <div className="">
+                     <figure>
+                      <img src={testimon.image} alt="client image" className="w-20 h-20 rounded-full"></img>
+                    </figure>
+                     </div>
+                     <div>
+                    <p>{testimon.name}</p>
+                    <p>{testimon.occupation}</p>
+                    </div>
+                    </div>
                 </div>
               </SwiperSlide>
             ))}
