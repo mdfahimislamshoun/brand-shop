@@ -66,7 +66,10 @@ const Cards = ({ myCard, existCard, setExistCard }) => {
 
   return (
     <div >
-      <div className="card w-96 h-[500px] bg-base-100 shadow-xl mt-20 mb-20">
+      <div className="card w-96 h-[500px] bg-base-100 shadow-xl mt-20 mb-20"
+      data-aos="fade-down"
+      data-aos-easing="linear"
+      data-aos-duration="1500">
         <figure className="">
           <img
             src={product_image}

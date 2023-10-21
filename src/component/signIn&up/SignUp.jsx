@@ -16,7 +16,7 @@ const SignUp = () => {
 
     if (password.length < 6) {
       return toast.error(
-        " password should have an uppercase later and 8 character or longer",
+        " password should have  6 character or longer",
         {
           position: "top-center",
           autoClose: 5000,
@@ -30,7 +30,37 @@ const SignUp = () => {
       );
     } else if (!/[A-Z]/.test(password)) {
       return toast.error(
-        " password should have an uppercase later and 8 character or longer",
+        " password should have an uppercase later",
+        {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        }
+      );
+    }
+      else if (!/[0-9]/.test(password)) {
+        return toast.error(
+          " password should have an  number like 123",
+          {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          }
+        );
+      }
+     else if (!/(?=[^!"#$%&'()*+,-.:;<=>?@[\]^_`{|}~]*[!"#$%&'()*+,-.:;<=>?@[\]^_`{|}~])/.test(password)) {
+      return toast.error(
+        " password should have an  special like *#%",
         {
           position: "top-center",
           autoClose: 5000,

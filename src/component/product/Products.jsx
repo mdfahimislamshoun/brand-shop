@@ -1,11 +1,15 @@
 /* eslint-disable react/prop-types */
+
 import { Link } from "react-router-dom";
 
 const Products = ({ p }) => {
-  const { _id, brand_name, name, price, title, rating, image } = p;
+  const { _id} = p;
   return (
     <div>
-      <div className="card w-80 h-[450px] bg-base-100 shadow-xl mb-20">
+      <div className="card w-80 h-[450px] bg-base-100 shadow-xl mb-20"
+      data-aos="flip-left"
+      data-aos-easing="ease-out-cubic"
+      data-aos-duration="2000">
         <figure>
           <img src={p.image} alt="name" className=" w-full h-56 rounded-xl" />
         </figure>

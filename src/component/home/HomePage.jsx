@@ -3,11 +3,7 @@ import Banner from "./Banner";
 import { useEffect } from "react";
 import BrandCard from "./BrandCard";
 import "./home.css";
-import {
-  Navigation,
-  Pagination,
-  Autoplay,
-} from "swiper/modules";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper style
@@ -16,7 +12,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Deliver from "../delivers/Deliver";
 
 const HomePage = () => {
@@ -30,23 +26,48 @@ const HomePage = () => {
       });
   }, []);
   return (
-    <div className="container w-[100%] justify-center  mx-auto">
+    <div className="container w-[98%] justify-center  mx-auto">
       <Banner></Banner>
-      <div className="mt-20">
+      <div className="mt-20"
+      data-aos="fade-down"
+      data-aos-easing="linear"
+      data-aos-duration="1500">
         <h1 className=" text-3xl text-white text-center font-bold">
           choose your favorite brand
         </h1>
       </div>
       <div
-        className=" container w-[95%] justify-center
+        className=" container w-[98%] justify-center
             grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10  mx-auto"
       >
         {brands.map((brand) => (
           <BrandCard key={brand.brand_name} brand={brand}></BrandCard>
         ))}
       </div>
+      <div className="container w-[98%] justify-center mx-auto  mt-20 relative"
+      >
+        <div>
+          <figure>
+            <img
+              src="https://i.ibb.co/pWFbWfP/pretty-young-stylish-sexy-woman-pink-luxury-dress-summer-fashion-trend-chic-style-sunglasses-blue-st.jpg"
+              alt="image"
+              className="w-full h-[500px] opacity-50"
+            />
+          </figure>
+        </div>
+        <div className=" absolute top-40 max-sm:right-4 md:right-16 lg:right-32"
+        data-aos="fade-down"
+        data-aos-easing="linear"
+        data-aos-duration="1500">
+          <h3 className="text-2xl font-semibold ">HAPPY SUNDAY</h3>
+          <h1 className="text-7xl font-normal">20% off</h1>
+          <p className="text-2xl font-medium">all premium T-Shirt</p>
+          <Link to='/product'>
+          <button className="btn  bg-blue-500 hover:bg-blue-600 text-xl mt-5">Shop Now</button></Link>
+        </div>
+      </div>
 
-      <div className="container  mt-20 justify-center mx-auto ">
+      <div className="container w-[98%]  mt-20 justify-center mx-auto ">
         <div className="mb-20">
           <h1 className="text-2xl font-black text-center">CUSTOMER SAY</h1>
           <h2 className="text-3xl font-semibold text-center">
@@ -66,19 +87,23 @@ const HomePage = () => {
               <SwiperSlide key={testimon._id}>
                 <div className="container flex flex-col items-center ">
                   <div className="container p-8 relative client-review shadow-xl rounded-xl">
-                  <p>{testimon.review}</p>
+                    <p>{testimon.review}</p>
                   </div>
                   <div className=" flex items-center gap-10 mt-6">
                     <div className="">
-                     <figure>
-                      <img src={testimon.image} alt="client image" className="w-20 h-20 rounded-full"></img>
-                    </figure>
-                     </div>
-                     <div>
-                    <p>{testimon.name}</p>
-                    <p>{testimon.occupation}</p>
+                      <figure>
+                        <img
+                          src={testimon.image}
+                          alt="client image"
+                          className="w-20 h-20 rounded-full"
+                        ></img>
+                      </figure>
                     </div>
+                    <div>
+                      <p>{testimon.name}</p>
+                      <p>{testimon.occupation}</p>
                     </div>
+                  </div>
                 </div>
               </SwiperSlide>
             ))}
@@ -88,7 +113,10 @@ const HomePage = () => {
       <div className="mt-20">
         <Deliver></Deliver>
       </div>
-      <div className="mt-20">
+      <div className="mt-20"
+      data-aos="fade-down"
+      data-aos-easing="linear"
+      data-aos-duration="1500">
         <footer className="footer p-10 bg-base-200 text-base-content">
           <nav>
             <header className="footer-title">Services</header>

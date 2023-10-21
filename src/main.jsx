@@ -16,6 +16,7 @@ import EditProduct from "./component/product/EditeProduct";
 import Details from "./component/product/Details";
 import MyCard from "./component/myCard/MyCard";
 import About from "./component/delivers/About";
+import AllProduct from "./component/product/AllProduct";
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,12 @@ const router = createBrowserRouter([
             <Product></Product>
           </Private>
         ),
+        loader: () =>
+          fetch("https://ten-9c1ccruaj-fahim-s-projects.vercel.app/products"),
+      },
+      {
+        path:'/Product',
+        element:<Private><AllProduct></AllProduct></Private>,
         loader: () =>
           fetch("https://ten-9c1ccruaj-fahim-s-projects.vercel.app/products"),
       },

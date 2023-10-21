@@ -1,8 +1,18 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Project-Event-Management
 
-Currently, two official plugins are available:
+## [ Live link](https://project-event-management.web.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Click here for the Live link: [https://project-event-management.web.app/](https://project-event-management.web.app/)
+
+
+
+### project features 
+- user can visit homepage without signIn .
+- User must sigIn to view products.
+- SignIn with Google and Guitar in addition to user email and   password. 
+- When the user scrolls down he will see an animation.
+- User can choose products according to his choice.
+- User can add products on her product card collection.
+- User able to delete her card on his card collection.
+

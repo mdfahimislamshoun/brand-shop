@@ -1,14 +1,11 @@
-// import { useState } from "react";
+
 import ProductBanner from "./ProductBanner";
 import { useLoaderData, useParams } from "react-router-dom";
 import Products from "./Products";
 
 const Product = () => {
-  // const[existProduct,setExistProduct]=useState([])
   const products = useLoaderData([]);
-
   const { brand_name } = useParams();
-  //   const idInt = parseInt(id);
   const product = products.filter((products) => products.brand_name === brand_name);
   
   return (
