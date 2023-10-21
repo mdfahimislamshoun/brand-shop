@@ -1,9 +1,9 @@
 
 # Project-Event-Management
 
-## [ Live link](https://project-event-management.web.app/)
+## [ Live link](https://stellar-ganache-f0a71e.netlify.app/)
 
-Click here for the Live link: [https://project-event-management.web.app/](https://project-event-management.web.app/)
+Click here for the Live link: [https://stellar-ganache-f0a71e.netlify.app/](https://stellar-ganache-f0a71e.netlify.app/)
 
 
 
