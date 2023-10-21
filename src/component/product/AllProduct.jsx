@@ -1,8 +1,18 @@
 import { Rating } from "@smastrom/react-rating";
 import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const AllProduct = () => {
   const showAll = useLoaderData([]);
+
+  const Order=()=>{
+    return Swal.fire(
+      "Good job!",
+      "Your order has been successful",
+      "success"
+    );
+  }
+
   return (
     <div className="container w-[98%] justify-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-20 mx-auto "
     >
@@ -39,7 +49,8 @@ const AllProduct = () => {
             </p>
           </div>
 
-          <button className="btn btn-primary w-full"> Buy now</button>
+          <button onClick={Order}
+          className="btn btn-primary w-full"> Buy now</button>
         </div>
       ))}
     </div>
